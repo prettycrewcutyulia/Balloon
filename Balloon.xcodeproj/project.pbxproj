@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48873FA22B0919E700CAFEE1 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48873FA12B0919E600CAFEE1 /* OpenSans-Light.ttf */; };
+		48873FA42B0919F500CAFEE1 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48873FA32B0919F500CAFEE1 /* OpenSans-Regular.ttf */; };
+		48873FA62B091A0200CAFEE1 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48873FA52B091A0200CAFEE1 /* OpenSans-SemiBold.ttf */; };
 		48B109E52B06C71700839F7B /* BalloonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B109E42B06C71700839F7B /* BalloonApp.swift */; };
-		48B109E72B06C71700839F7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B109E62B06C71700839F7B /* ContentView.swift */; };
+		48B109E72B06C71700839F7B /* ChooseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B109E62B06C71700839F7B /* ChooseLanguageView.swift */; };
 		48B109E92B06C71900839F7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B109E82B06C71900839F7B /* Assets.xcassets */; };
 		48B109EC2B06C71900839F7B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B109EB2B06C71900839F7B /* Preview Assets.xcassets */; };
 		48B109F62B06C71900839F7B /* BalloonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B109F52B06C71900839F7B /* BalloonTests.swift */; };
 		48B10A002B06C71900839F7B /* BalloonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B109FF2B06C71900839F7B /* BalloonUITests.swift */; };
 		48B10A022B06C71900839F7B /* BalloonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B10A012B06C71900839F7B /* BalloonUITestsLaunchTests.swift */; };
+		48CF441C2B07FE2E00EC07CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48CF441E2B07FE2E00EC07CC /* Localizable.strings */; };
+		48CF44212B07FF6500EC07CC /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF44202B07FF6500EC07CC /* Extension+String.swift */; };
+		48CF44232B081AC500EC07CC /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF44222B081AC500EC07CC /* AuthorizationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48873FA02B090AFA00CAFEE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		48873FA12B0919E600CAFEE1 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		48873FA32B0919F500CAFEE1 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		48873FA52B091A0200CAFEE1 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		48B109E12B06C71700839F7B /* Balloon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balloon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B109E42B06C71700839F7B /* BalloonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonApp.swift; sourceTree = "<group>"; };
-		48B109E62B06C71700839F7B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		48B109E62B06C71700839F7B /* ChooseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageView.swift; sourceTree = "<group>"; };
 		48B109E82B06C71900839F7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48B109EB2B06C71900839F7B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		48B109F12B06C71900839F7B /* BalloonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BalloonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +54,10 @@
 		48B109FB2B06C71900839F7B /* BalloonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BalloonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B109FF2B06C71900839F7B /* BalloonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonUITests.swift; sourceTree = "<group>"; };
 		48B10A012B06C71900839F7B /* BalloonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48CF441D2B07FE2E00EC07CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		48CF441F2B07FE2F00EC07CC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		48CF44202B07FF6500EC07CC /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		48CF44222B081AC500EC07CC /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +108,15 @@
 		48B109E32B06C71700839F7B /* Balloon */ = {
 			isa = PBXGroup;
 			children = (
+				48873FA02B090AFA00CAFEE1 /* Info.plist */,
+				48CF44112B07E34300EC07CC /* Fonts */,
 				48B109E42B06C71700839F7B /* BalloonApp.swift */,
-				48B109E62B06C71700839F7B /* ContentView.swift */,
+				48B109E62B06C71700839F7B /* ChooseLanguageView.swift */,
 				48B109E82B06C71900839F7B /* Assets.xcassets */,
 				48B109EA2B06C71900839F7B /* Preview Content */,
+				48CF441E2B07FE2E00EC07CC /* Localizable.strings */,
+				48CF44202B07FF6500EC07CC /* Extension+String.swift */,
+				48CF44222B081AC500EC07CC /* AuthorizationView.swift */,
 			);
 			path = Balloon;
 			sourceTree = "<group>";
@@ -125,6 +144,16 @@
 				48B10A012B06C71900839F7B /* BalloonUITestsLaunchTests.swift */,
 			);
 			path = BalloonUITests;
+			sourceTree = "<group>";
+		};
+		48CF44112B07E34300EC07CC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				48873FA12B0919E600CAFEE1 /* OpenSans-Light.ttf */,
+				48873FA32B0919F500CAFEE1 /* OpenSans-Regular.ttf */,
+				48873FA52B091A0200CAFEE1 /* OpenSans-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +242,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 48B109D82B06C71700839F7B;
 			productRefGroup = 48B109E22B06C71700839F7B /* Products */;
@@ -231,7 +261,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48873FA42B0919F500CAFEE1 /* OpenSans-Regular.ttf in Resources */,
 				48B109EC2B06C71900839F7B /* Preview Assets.xcassets in Resources */,
+				48CF441C2B07FE2E00EC07CC /* Localizable.strings in Resources */,
+				48873FA22B0919E700CAFEE1 /* OpenSans-Light.ttf in Resources */,
+				48873FA62B091A0200CAFEE1 /* OpenSans-SemiBold.ttf in Resources */,
 				48B109E92B06C71900839F7B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48B109E72B06C71700839F7B /* ContentView.swift in Sources */,
+				48B109E72B06C71700839F7B /* ChooseLanguageView.swift in Sources */,
 				48B109E52B06C71700839F7B /* BalloonApp.swift in Sources */,
+				48CF44232B081AC500EC07CC /* AuthorizationView.swift in Sources */,
+				48CF44212B07FF6500EC07CC /* Extension+String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +329,18 @@
 			targetProxy = 48B109FC2B06C71900839F7B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		48CF441E2B07FE2E00EC07CC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48CF441D2B07FE2E00EC07CC /* en */,
+				48CF441F2B07FE2F00EC07CC /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		48B10A032B06C71900839F7B /* Debug */ = {
@@ -422,8 +470,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Balloon/Preview Content\"";
+				DEVELOPMENT_TEAM = 7Q94L4HLT8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Balloon/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -450,8 +500,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Balloon/Preview Content\"";
+				DEVELOPMENT_TEAM = 7Q94L4HLT8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Balloon/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct BalloonApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ChooseLanguageView()
         }
     }
 }

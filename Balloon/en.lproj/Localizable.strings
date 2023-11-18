@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Balloon
+
+  Created by Юлия Гудошникова on 17.11.2023.
+  
+*/
+
+"choose_language" = "Choose language:";
+"english" = "English";
+"russian" = "Russian";
+"continue" = "Continue";
+"welcome" = "Welcome back!";
+"forgot_password" = "Forgot password?";
+"sign in" = "Login";
+"Don't have an account?" = "Don't have an account?";
+"Sign up" = "Sign up";
+"or" = "or";
+"Email" = "Email";
+"Password" = "Password";
