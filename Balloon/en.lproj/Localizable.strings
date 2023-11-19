@@ -18,3 +18,14 @@
 "or" = "or";
 "Email" = "Email";
 "Password" = "Password";
+"invalidloginpassword" = "Invalid email or password";
+"started" = "Let's get started!";
+"Confirm password" = "Confirm your password";
+"User name" = "Name";
+"invalidconfirmpassword" = "Passwords don't match";
+"Recover Password" = "Recover password";
+"Success" = "Success";
+"Not success" = "Not success";
+"Something went wrong. Try again." = "Something went wrong. Try again.";
+"Password reset email has been sent to" = "Password reset email has been sent to";
+"Back" = "Back";

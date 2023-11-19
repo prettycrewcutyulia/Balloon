@@ -17,3 +17,15 @@
 "or" = "или";
 "Email" = "Почта";
 "Password" = "Пароль";
+"invalidloginpassword" = "Неверная почта или пароль";
+"started" = "Давай знакомиться!";
+"Confirm password" = "Подтвердите пароль";
+"User name" = "Имя";
+"invalidconfirmpassword" = "Пароли не совпадают";
+"Recover Password" = "Восстановить пароль";
+"Success" = "Успешно";
+"Not success" = "Не успешно";
+"Something went wrong. Try again." = "Что-то пошло не так, попробуйте еще раз";
+"Password reset email has been sent to" = "Электронное письмо для сброса пароля было отправлено по адресу";
+"Back" = "Назад";
+
