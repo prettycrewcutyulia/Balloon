@@ -52,6 +52,7 @@ struct AuthorizationView: View {
                             showInvalidError = false
                             UserDefaults.standard.set("yes", forKey: "login")
                             print("Пользователь успешно вошел")
+                            isContinue = true
                         }
                     }
                 }) {
@@ -59,7 +60,9 @@ struct AuthorizationView: View {
                         .frame(width: screenSize.width * 0.9, height: 70)
                         .background(Color(red: 58 / 255.0, green: 130 / 255.0, blue: 247 / 255.0))
                         .cornerRadius(10)
-                }
+                }.fullScreenCover(isPresented: $isContinue, content: {
+                    HelloView()
+                })
                 HStack(content: {
                     Rectangle().frame( height: 1)
                     Text("or".localized)
@@ -97,9 +100,4 @@ func signIn(email: String, password: String, completion: @escaping (String?) -> 
             completion(nil)
         }
     }
-}
-
-
-#Preview {
-    AuthorizationView()
 }

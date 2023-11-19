@@ -31,6 +31,7 @@
 		48CF441C2B07FE2E00EC07CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48CF441E2B07FE2E00EC07CC /* Localizable.strings */; };
 		48CF44212B07FF6500EC07CC /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF44202B07FF6500EC07CC /* Extension+String.swift */; };
 		48CF44232B081AC500EC07CC /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF44222B081AC500EC07CC /* AuthorizationView.swift */; };
+		48E139C92B09A02200CD749A /* HelloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E139C82B09A02200CD749A /* HelloView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		48CF441F2B07FE2F00EC07CC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48CF44202B07FF6500EC07CC /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		48CF44222B081AC500EC07CC /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
+		48E139C82B09A02200CD749A /* HelloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				48CF44222B081AC500EC07CC /* AuthorizationView.swift */,
 				485AB0FA2B096B720005EE27 /* RegistrationView.swift */,
 				485AB1032B0978D30005EE27 /* ForgotPasswordView.swift */,
+				48E139C82B09A02200CD749A /* HelloView.swift */,
 			);
 			path = Balloon;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				48CF44232B081AC500EC07CC /* AuthorizationView.swift in Sources */,
 				48CF44212B07FF6500EC07CC /* Extension+String.swift in Sources */,
 				485AB1042B0978D30005EE27 /* ForgotPasswordView.swift in Sources */,
+				48E139C92B09A02200CD749A /* HelloView.swift in Sources */,
 				485AB0FB2B096B720005EE27 /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

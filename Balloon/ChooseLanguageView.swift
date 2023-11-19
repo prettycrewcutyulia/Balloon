@@ -54,7 +54,3 @@ struct ChooseLanguageView: View {
         }
     }
 }
-
-#Preview {
-    ChooseLanguageView()
-}
