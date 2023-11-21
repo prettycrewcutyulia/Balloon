@@ -27,10 +27,10 @@
 "Success" = "Success";
 "Not success" = "Not success";
 "Something went wrong. Try again." = "Something went wrong. Try again.";
-"Password reset email has been sent to" = "Password reset email has been sent to";
+"Password reset email has been sent to" = "Password reset email has been sent to ";
 "Back" = "Back";
 "Hi" = "Hi";
 "my name is Balloon and I will become your personal diabetic assistant" = "my name is Balloon and I will become your personal diabetic assistant";
 "Answer a couple of questions before I can help you" = "Answer a couple of questions before I can help you";
 "Let's go" = "Let's go";
-"The password length must be greater than or equal to 6" = "The password length must be greater than or equal to 6";
+"The password length must be greater than 6" = "The password length must be greater than 6";

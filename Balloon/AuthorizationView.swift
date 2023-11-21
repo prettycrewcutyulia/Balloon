@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import FirebaseAuth
 import GoogleSignIn
+import GoogleSignInSwift
+import FirebaseCore
 
 struct AuthorizationView: View {
     @State var user = ""
@@ -16,6 +18,7 @@ struct AuthorizationView: View {
     @State var showInvalidError = false
     @State private var isContinue: Bool = false
     @State private var isForgotPassword: Bool = false
+    @State private var isPasswordVisible: Bool = false
     
     var body: some View {
         let screenSize = UIScreen.main.bounds.size
@@ -31,7 +34,18 @@ struct AuthorizationView: View {
                 VStack(spacing: 15, content: {
                     VStack(alignment: .leading, spacing: 20, content: {
                         TextField("Email".localized, text: $user) .frame(width: screenSize.width * 0.8, height: 24).padding(.vertical, 18).padding(.horizontal).font(Font.custom("OpenSans-Regular", size: 20)).overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0))).multilineTextAlignment(.leading).autocapitalization(.none)
-                        SecureField("Password".localized, text: $pass) .frame(width: screenSize.width * 0.8, height: 24).padding(.vertical, 18).padding(.horizontal).font(Font.custom("OpenSans-Regular", size: 20)).overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0))).multilineTextAlignment(.leading).autocapitalization(.none)
+                        HStack(spacing: 15) {
+                            if (!isPasswordVisible) {
+                                SecureField("Password".localized, text: $pass).font(Font.custom("OpenSans-Regular", size: 20)).multilineTextAlignment(.leading).autocapitalization(.none)
+                            }else {
+                                TextField("Password".localized, text: $pass).font(Font.custom("OpenSans-Regular", size: 20)).multilineTextAlignment(.leading).autocapitalization(.none)
+                            }
+                            Button(action: {
+                                isPasswordVisible.toggle()
+                            }, label: {
+                                Image(systemName: self.isPasswordVisible ? "eye.slash.fill": "eye.fill").foregroundColor(.gray)
+                            })
+                        } .frame(width: screenSize.width * 0.8, height: 24).padding(.vertical, 18).padding(.horizontal).overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
                     })
                         VStack(content: {
                             NavigationLink {
@@ -70,7 +84,7 @@ struct AuthorizationView: View {
                 }).padding(.horizontal, 20).foregroundStyle(.gray)
                 HStack(spacing: 25, content: {
                     Button(action: {
-                        
+
                     }, label: {
                         Image("google_logo").resizable().aspectRatio(contentMode: .fit).frame(width: 30,  height: 31.6).padding(15) .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
                     })

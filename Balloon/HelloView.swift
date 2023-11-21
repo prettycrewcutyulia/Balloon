@@ -18,7 +18,7 @@ struct HelloView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 223)
-                    Text("Answer a couple of questions before I can help you").padding(30).font(Font.custom("OpenSans-Regular", size: 25)).lineSpacing(-1).tracking(-1).multilineTextAlignment(.center)
+                    Text("Answer a couple of questions before I can help you".localized).padding(30).font(Font.custom("OpenSans-Regular", size: 25)).lineSpacing(-1).tracking(-1).multilineTextAlignment(.center)
                 })
             NavigationLink {
 //                AuthorizationView()

@@ -14,7 +14,9 @@ struct RegistrationView: View {
     @State var pass = ""
     @State var confirmPassword = ""
     @State var showInvalidError = false
+    @State var showInvalidLengthPassword = false
     @State private var isContinue: Bool = false
+    @State private var isPasswordVisible: Bool = false
     
     var body: some View {
         let screenSize = UIScreen.main.bounds.size
@@ -29,21 +31,41 @@ struct RegistrationView: View {
             VStack(alignment: .leading, spacing: 20, content: {
                 TextField("User name".localized, text: $userName) .frame(width: screenSize.width * 0.8, height: 24).padding(.vertical, 18).padding(.horizontal).font(Font.custom("OpenSans-Regular", size: 20)).overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0))).multilineTextAlignment(.leading)
                 TextField("Email".localized, text: $email) .frame(width: screenSize.width * 0.8, height: 24).padding(.vertical, 18).padding(.horizontal).font(Font.custom("OpenSans-Regular", size: 20)).overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0))).multilineTextAlignment(.leading) .autocapitalization(.none)
-                SecureField("Password".localized, text: $pass) .frame(width: screenSize.width * 0.8, height: 24).padding(.vertical, 18).padding(.horizontal).font(Font.custom("OpenSans-Regular", size: 20)).overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0))).multilineTextAlignment(.leading).autocapitalization(.none)
-                SecureField("Confirm password".localized, text: $confirmPassword, onCommit: {
-                    updateInvalidError()
-                }).frame(width: screenSize.width * 0.8, height: 24).padding(.vertical, 18).padding(.horizontal).font(Font.custom("OpenSans-Regular", size: 20)).overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0))).multilineTextAlignment(.leading).autocapitalization(.none)
+                HStack(spacing: 15) {
+                    if (!isPasswordVisible) {
+                        SecureField("Password".localized, text: $pass).font(Font.custom("OpenSans-Regular", size: 20)).multilineTextAlignment(.leading).autocapitalization(.none)
+                    }else {
+                        TextField("Password".localized, text: $pass).font(Font.custom("OpenSans-Regular", size: 20)).multilineTextAlignment(.leading).autocapitalization(.none)
+                    }
+                    Button(action: {
+                        isPasswordVisible.toggle()
+                    }, label: {
+                        Image(systemName: self.isPasswordVisible ? "eye.slash.fill": "eye.fill").foregroundColor(.gray)
+                    })
+                } .frame(width: screenSize.width * 0.8, height: 24).padding(.vertical, 18).padding(.horizontal).overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
+                HStack(spacing: 15) {
+                    if (!isPasswordVisible) {
+                        SecureField("Confirm password".localized, text: $confirmPassword).font(Font.custom("OpenSans-Regular", size: 20)).multilineTextAlignment(.leading).autocapitalization(.none)
+                    }else {
+                        TextField("Confirm password".localized, text: $confirmPassword).font(Font.custom("OpenSans-Regular", size: 20)).multilineTextAlignment(.leading).autocapitalization(.none)
+                    }
+                    Button(action: {
+                        isPasswordVisible.toggle()
+                    }, label: {
+                        Image(systemName: self.isPasswordVisible ? "eye.slash.fill": "eye.fill").foregroundColor(.gray)
+                    })
+                } .frame(width: screenSize.width * 0.8, height: 24).padding(.vertical, 18).padding(.horizontal).overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
                 if (showInvalidError) {
                     Text("invalidconfirmpassword".localized).font(Font.custom("OpenSans-SemiBold", size: 16)).foregroundStyle(Color.red)
                 }
-                if (pass.count < 6) {
-                    Text("The password length must be greater than or equal to 6".localized).font(Font.custom("OpenSans-SemiBold", size: 16)).foregroundStyle(Color.red)
+                if (showInvalidLengthPassword) {
+                    Text("The password length must be greater than 6".localized).font(Font.custom("OpenSans-SemiBold", size: 16)).foregroundStyle(Color.red)
                 }
             })
             Button(action: {
                 signUp(email: self.email , password: self.pass ) { error in
                     if let error = error {
-                        showInvalidError = true
+                        updateInvalidError()
                         print("Ошибка входа: \(error)")
                     } else {
                         showInvalidError = false
@@ -63,9 +85,10 @@ struct RegistrationView: View {
             })
         }).navigationTitle("")
     }
-    private func updateInvalidError() {
-            showInvalidError = pass != confirmPassword
-        }
+    private func updateInvalidError(){
+        showInvalidError = pass != confirmPassword
+        showInvalidLengthPassword = pass.count < 6
+    }
 }
 
 func signUp(email: String, password: String, completion: @escaping (String?) -> Void) {

@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseCore
 import GoogleSignIn
 import FirebaseAppCheck
+import FirebaseAuth
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
@@ -16,8 +17,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 //    let providerFactory = AppCheckDebugProviderFactory()
 //    AppCheck.setAppCheckProviderFactory(providerFactory)
     FirebaseApp.configure()
+    Auth.auth().useEmulator(withHost: "localhost", port: 9099)
     return true
   }
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+      return GIDSignIn.sharedInstance.handle(url)
+    }
 }
 
 @main
