@@ -32,8 +32,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
             endingLineNumber = "14"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "7CFD5CE2-DCB1-4645-AF7E-4C4C186AD4CB - 80fe207e73963bcb"

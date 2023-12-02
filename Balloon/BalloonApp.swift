@@ -29,7 +29,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct BalloonApp: App {
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
