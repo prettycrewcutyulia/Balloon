@@ -26,7 +26,10 @@ struct TopImageWithText : View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 140)
-            Text(text).font(Font.custom("OpenSans-Regular", size: 30)).multilineTextAlignment(.center)
+            GeometryReader { geometry in
+                Text(text).font(Font.custom("OpenSans-Regular", size: 30)).padding().multilineTextAlignment(.center) .minimumScaleFactor(0.3)
+                    .frame(width: geometry.size.width) // Установите ширину текста или используйте другие параметры
+            }
         })
     }
     
