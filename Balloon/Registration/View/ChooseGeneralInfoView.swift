@@ -13,12 +13,11 @@ struct ChooseGeneralInfoView: View {
     var body: some View {
             VStack(alignment: .center) {
                 TopImageWithText(Spacing: 6, Image: "calm", Text: "And a few more questions...".localized).frame(maxHeight: 250)
-                Spacer(minLength: 60)
                 List {
                     Picker(selection: $viewModel.sex, content: {
                         Text("Male").tag("male").font(Font.title)
                         Text("Female").tag("female")
-                    }, label: {Text("")}).pickerStyle(.palette).listRowSeparator(.hidden)
+                    }, label: {Text("")}).pickerStyle(.palette).listRowSeparator(.hidden).padding(.vertical)
                     Picker(selection: $viewModel.height, label:
                                     Text("Height")
                                 ) {
@@ -38,7 +37,7 @@ struct ChooseGeneralInfoView: View {
                     }.padding().overlay(RoundedRectangle(cornerRadius: 10.0)
                         .strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0))).listRowSeparator(.hidden)
                 }.listStyle(.inset)
-                Spacer(minLength: 150)
+                
                 FullScreenCoverButton(isPresented: $viewModel.isContinue, destination: HomeView(), label: Text("sign in".localized), action: {viewModel.createAccount()})
                 }
         .padding()
