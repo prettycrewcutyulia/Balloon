@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HelloView: View {
     @State private var isChooseTypeDiabetPresented = false
-    let userName =  UserDefaults.standard.string(forKey: "userName") ?? "Non"
+    let userName =  UserDefaults.standard.string(forKey: "Name") ?? "Non"
     
     var body: some View {
         VStack(spacing: 40) {
@@ -32,8 +32,4 @@ struct HelloView: View {
         }.padding() // Добавляем padding, чтобы фон занимал весь экран
             .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
     }
-}
-
-#Preview {
-    HelloView()
 }
