@@ -29,7 +29,8 @@ struct ForgotPasswordView: View {
             }.alert(isPresented: $viewModel.showAlert) {
                 Alert(title: Text(viewModel.alertText), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
             }
-        }.navigationTitle("")
+        }.padding() // Добавляем padding, чтобы фон занимал весь экран
+            .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all)).navigationTitle("")
     }
 }
 

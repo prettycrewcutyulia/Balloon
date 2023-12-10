@@ -8,14 +8,13 @@
 import Foundation
 import SwiftUI
 import FirebaseAuth
-import GoogleSignIn
-import GoogleSignInSwift
 import FirebaseCore
 
 struct AuthorizationView: View {
     
     @ObservedObject var viewModel = AuthorizationViewModel()
     @State private var isPasswordVisible: Bool = false
+
     
     var body: some View {
         let screenSize = UIScreen.main.bounds.size
@@ -47,10 +46,12 @@ struct AuthorizationView: View {
                 NavigationLink {
                     RegistrationView()
                 } label: {
-                    Text("Sign up".localized).font(Font.custom("OpenSans-SemiBold", size: 18)).foregroundStyle(Color.black)
+                    Text("Sign up".localized).font(Font.custom("OpenSans-SemiBold", size: 18)).foregroundStyle(Color("TextColor"))
                 }
             })
-        }).navigationTitle("")
+        }).padding() // Добавляем padding, чтобы фон занимал весь экран
+            .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
+            .navigationTitle("")
     }
 }
 

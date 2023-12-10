@@ -12,7 +12,6 @@ struct HelloView: View {
     let userName =  UserDefaults.standard.string(forKey: "userName") ?? "Non"
     
     var body: some View {
-        let screenSize = UIScreen.main.bounds.size
         VStack(spacing: 40) {
                 VStack(spacing: 30, content: {
                     Text("Hi".localized + ", " + userName + ", " + "my name is Balloon and I will become your personal diabetic assistant".localized).padding(18).font(Font.custom("OpenSans-Regular", size: 25)).lineSpacing(-1).tracking(-1).multilineTextAlignment(.center)
@@ -30,7 +29,8 @@ struct HelloView: View {
                                 isChooseTypeDiabetPresented.toggle()
                             }
                         )
-        }
+        }.padding() // Добавляем padding, чтобы фон занимал весь экран
+            .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
     }
 }
 

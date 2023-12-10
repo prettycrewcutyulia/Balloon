@@ -22,9 +22,11 @@ struct ChooseLanguageView: View {
                     RadioButton(isSelected: viewModel.selectedLanguage == "ru", text: "russian", action:{ viewModel.chooseLanguage("ru")})
                 })
                 Spacer(minLength: 230)
-                CustomNavigationButton(destination: AuthorizationView(), title:""){
+                CustomNavigationButton(destination: AuthorizationView()){
                     Text("continue".localized)}
-            }.navigationTitle("")
+            }.padding() // Добавляем padding, чтобы фон занимал весь экран
+                .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all)) // Устанавливаем фоновый цвет на VStack
+                .navigationTitle("") // Пустой заголовок навигации
         }
     }
 }

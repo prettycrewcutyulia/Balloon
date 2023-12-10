@@ -11,14 +11,15 @@ import FirebaseAuth
 struct RegistrationView: View {
     
     @ObservedObject var viewModel = RegistrationViewModel()
-    
+
     var body: some View {
         let screenSize = UIScreen.main.bounds.size
         VStack(alignment: .center,spacing: 50, content: {
             TopImageWithText(Spacing: 6, Image: "balloon", Text: "started".localized)
             FormaView(viewModel: viewModel, screenSize: screenSize)
             FullScreenCoverButton(isPresented: $viewModel.isContinue, destination: HelloView(), label: Text("Sign up".localized), action: {viewModel.signUp()})
-        })
+        }).padding() // Добавляем padding, чтобы фон занимал весь экран
+            .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
     }
 }
 
@@ -49,7 +50,7 @@ struct FormaView: View {
             } .frame(width: screenSize.width * 0.8, height: 24).registrationTextFieldStyle()
             
             HStack(spacing: 15) {
-                if (!isPasswordVisible) {
+                if (!isConfirmPasswordVisible) {
                     CustomSecureField(text: $viewModel.confirmPassword, placeholder: "Confirm password")
                 }else {
                     CustomTextField(text: $viewModel.confirmPassword, placeholder: "Confirm password")

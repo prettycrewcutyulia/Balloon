@@ -17,6 +17,6 @@ class ChooseTypeDiabetViewModel: ObservableObject {
     }
     
     func confirmChoose() {
-        // сохранить изменения
+        UserDefaults.standard.set(selectedTypeDiabet, forKey: "TypeDiabet")
     }
 }

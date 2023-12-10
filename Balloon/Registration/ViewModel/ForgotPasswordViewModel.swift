@@ -15,7 +15,7 @@ class ForgotPasswordViewModel: ObservableObject {
     @Published var alertText = ""
     @Published private var success = false
     
-    private let authService = AuthenticationServiceEmail.shared // ваш сервис авторизации
+    private let authService = AuthenticationServiceEmail.shared // сервис авторизации
     
     func resetPassword() {
         if (self.email != "") {

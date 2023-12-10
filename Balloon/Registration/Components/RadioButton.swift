@@ -24,7 +24,7 @@ struct RadioButton : View {
             Label(text.localized,
                   systemImage: isSelected ? "largecircle.fill.circle" : "circle")
             .font(Font.custom("OpenSans-Regular", size: 25))
-            .foregroundColor(.black)
+            .foregroundColor(Color("TextColor"))
         }
         .padding(.vertical, 12)
         .padding(.horizontal, 20)

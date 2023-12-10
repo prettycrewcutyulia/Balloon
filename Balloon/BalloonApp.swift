@@ -7,9 +7,10 @@
 
 import SwiftUI
 import FirebaseCore
-import GoogleSignIn
 import FirebaseAppCheck
 import FirebaseAuth
+import FirebaseFirestore
+
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
@@ -17,14 +18,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 //    let providerFactory = AppCheckDebugProviderFactory()
 //    AppCheck.setAppCheckProviderFactory(providerFactory)
     FirebaseApp.configure()
+    let settings = FirestoreSettings()
+    settings.host = "localhost:8080"
+    settings.isSSLEnabled = false // Установите значение false для использования HTTP вместо HTTPS
+    let firestore = Firestore.firestore()
+    firestore.settings = settings
     Auth.auth().useEmulator(withHost: "localhost", port: 9099)
     return true
   }
-    func application(_ app: UIApplication,
-                     open url: URL,
-                     options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-      return GIDSignIn.sharedInstance.handle(url)
-    }
 }
 
 @main
@@ -33,7 +34,11 @@ struct BalloonApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ChooseLanguageView()
+//            if UserDefaults.standard.string(forKey:"login") == "yes" {
+//                HelloView()
+//            } else {
+                ChooseLanguageView()
+//            }
         }
     }
 }

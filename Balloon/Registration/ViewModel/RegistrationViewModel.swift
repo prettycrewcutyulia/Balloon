@@ -36,8 +36,8 @@ class RegistrationViewModel: ObservableObject {
             } else {
                 self?.showInvalidError = false
                 self?.showInvalidLengthPassword = false
-                UserDefaults.standard.set("yes", forKey: "login")
-                UserDefaults.standard.set(self?.userName, forKey: "userName")
+//                UserDefaults.standard.set("yes", forKey: "login")
+                UserDefaults.standard.set(self?.userName, forKey: "Name")
                 self?.isContinue = true
             }
         }
