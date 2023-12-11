@@ -54,7 +54,7 @@ struct FormNavigationBar: View {
             case .Blood:
                 CustomCircleSlider(count: $viewModel.blood, measurement: "mmol/l", koef: 36).padding()
             case .XE:
-                Text("xe")
+                CustomCircleSlider(count: $viewModel.XE, measurement: "bu", koef: 25).padding()
 
             case .ShortInsulin:
                 Text("ShortInsulin")
