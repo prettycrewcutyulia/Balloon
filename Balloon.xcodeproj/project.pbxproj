@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		484077D12B26552700F89C8D /* HomeTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484077D02B26552700F89C8D /* HomeTabBarViewModel.swift */; };
+		484077D42B265B5100F89C8D /* FormNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484077D32B265B5000F89C8D /* FormNavigationBar.swift */; };
+		484077D62B27B70E00F89C8D /* FormNavigationBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484077D52B27B70D00F89C8D /* FormNavigationBarViewModel.swift */; };
 		485AB0FB2B096B720005EE27 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AB0FA2B096B720005EE27 /* RegistrationView.swift */; };
 		485AB1022B0975B90005EE27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 485AB1012B0975B90005EE27 /* GoogleService-Info.plist */; };
 		485AB1042B0978D30005EE27 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AB1032B0978D30005EE27 /* ForgotPasswordView.swift */; };
@@ -15,7 +18,7 @@
 		4872810C2B22B6A200A386A3 /* ChooseBirthDateModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4872810B2B22B6A200A386A3 /* ChooseBirthDateModelView.swift */; };
 		4872810E2B23D15800A386A3 /* ChooseGeneralInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4872810D2B23D15800A386A3 /* ChooseGeneralInfoView.swift */; };
 		487281102B25211E00A386A3 /* ChooseGeneralInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4872810F2B25211E00A386A3 /* ChooseGeneralInfoViewModel.swift */; };
-		487281142B252FFE00A386A3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487281132B252FFE00A386A3 /* HomeView.swift */; };
+		487281142B252FFE00A386A3 /* HomeTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487281132B252FFE00A386A3 /* HomeTabBarView.swift */; };
 		48873FA22B0919E700CAFEE1 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48873FA12B0919E600CAFEE1 /* OpenSans-Light.ttf */; };
 		48873FA42B0919F500CAFEE1 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48873FA32B0919F500CAFEE1 /* OpenSans-Regular.ttf */; };
 		48873FA62B091A0200CAFEE1 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48873FA52B091A0200CAFEE1 /* OpenSans-SemiBold.ttf */; };
@@ -85,6 +88,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		484077D02B26552700F89C8D /* HomeTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewModel.swift; sourceTree = "<group>"; };
+		484077D32B265B5000F89C8D /* FormNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormNavigationBar.swift; sourceTree = "<group>"; };
+		484077D52B27B70D00F89C8D /* FormNavigationBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormNavigationBarViewModel.swift; sourceTree = "<group>"; };
 		485AB0FA2B096B720005EE27 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		485AB1012B0975B90005EE27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		485AB1032B0978D30005EE27 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -93,7 +99,7 @@
 		4872810B2B22B6A200A386A3 /* ChooseBirthDateModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBirthDateModelView.swift; sourceTree = "<group>"; };
 		4872810D2B23D15800A386A3 /* ChooseGeneralInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGeneralInfoView.swift; sourceTree = "<group>"; };
 		4872810F2B25211E00A386A3 /* ChooseGeneralInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGeneralInfoViewModel.swift; sourceTree = "<group>"; };
-		487281132B252FFE00A386A3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		487281132B252FFE00A386A3 /* HomeTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarView.swift; sourceTree = "<group>"; };
 		48873FA02B090AFA00CAFEE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		48873FA12B0919E600CAFEE1 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		48873FA32B0919F500CAFEE1 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -175,6 +181,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		484077D22B26552C00F89C8D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				484077D02B26552700F89C8D /* HomeTabBarViewModel.swift */,
+				484077D52B27B70D00F89C8D /* FormNavigationBarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		485AB0F72B0967EC0005EE27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +208,7 @@
 		487281112B252FE100A386A3 /* HomeWindow */ = {
 			isa = PBXGroup;
 			children = (
+				484077D22B26552C00F89C8D /* ViewModel */,
 				487281122B252FEC00A386A3 /* View */,
 			);
 			path = HomeWindow;
@@ -201,7 +217,8 @@
 		487281122B252FEC00A386A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				487281132B252FFE00A386A3 /* HomeView.swift */,
+				487281132B252FFE00A386A3 /* HomeTabBarView.swift */,
+				484077D32B265B5000F89C8D /* FormNavigationBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -512,6 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				484077D62B27B70E00F89C8D /* FormNavigationBarViewModel.swift in Sources */,
 				4898005B2B193DAE00E8C6BE /* AuthorizationViewModel.swift in Sources */,
 				489800602B1950E900E8C6BE /* RegistrationViewModel.swift in Sources */,
 				48A783D12B1A952300649E97 /* ImageSugnInButton.swift in Sources */,
@@ -524,7 +542,9 @@
 				48B109E52B06C71700839F7B /* BalloonApp.swift in Sources */,
 				48CF44232B081AC500EC07CC /* AuthorizationView.swift in Sources */,
 				48A783CF2B1A950500649E97 /* FullScreenCoverButton.swift in Sources */,
-				487281142B252FFE00A386A3 /* HomeView.swift in Sources */,
+				487281142B252FFE00A386A3 /* HomeTabBarView.swift in Sources */,
+				484077D12B26552700F89C8D /* HomeTabBarViewModel.swift in Sources */,
+				484077D42B265B5100F89C8D /* FormNavigationBar.swift in Sources */,
 				487281102B25211E00A386A3 /* ChooseGeneralInfoViewModel.swift in Sources */,
 				48A783D82B1B6CB300649E97 /* ChooseTypeDiabetView.swift in Sources */,
 				48A783CB2B1A94BF00649E97 /* CustomSecureField.swift in Sources */,

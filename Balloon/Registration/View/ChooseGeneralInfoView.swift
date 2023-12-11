@@ -38,7 +38,7 @@ struct ChooseGeneralInfoView: View {
                         .strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0))).listRowSeparator(.hidden)
                 }.listStyle(.inset)
                 
-                FullScreenCoverButton(isPresented: $viewModel.isContinue, destination: HomeView(), label: Text("sign in".localized), action: {viewModel.createAccount()})
+                FullScreenCoverButton(isPresented: $viewModel.isContinue, destination: HomeTabBarView(), label: Text("sign in".localized), action: {viewModel.createAccount()})
                 }
         .padding()
             .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
