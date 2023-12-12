@@ -18,6 +18,14 @@ enum DiabetiIndicators: String, CaseIterable, Identifiable {
     var id: String { self.rawValue }
 }
 
+enum Mood:String, CaseIterable, Identifiable {
+    case happy = "happy"
+    case calm = "calm"
+    case angry = "angry"
+    
+    var id: String { self.rawValue }
+}
+
 struct FormNavigationBar: View {
     @ObservedObject var viewModel = FormNavigationBarViewModel()
     init() {
@@ -30,6 +38,32 @@ struct FormNavigationBar: View {
         VStack(alignment: .center, spacing: 10){
             Text(viewModel.choosenIndicators.rawValue.localized).font(.title2)
             Divider().frame(height: 1).background(Color("BaseColor")).padding(.horizontal)
+
+            DatePicker("DateTime", selection: $viewModel.date).labelsHidden().padding(.bottom)
+            switch viewModel.choosenIndicators {
+            case .Blood:
+                CustomCircleSlider(count: $viewModel.blood, measurement: "mmol/l", koef: 36).padding()
+            case .XE:
+                CustomCircleSlider(count: $viewModel.XE, measurement: "bu", koef: 25).padding()
+
+            case .ShortInsulin:
+                CustomCircleSlider(count: $viewModel.shortInsulin, measurement: "units", koef: 30).padding()
+
+            case .LongInsulin:
+                CustomCircleSlider(count: $viewModel.longInsulin, measurement: "units", koef: 100).padding()
+
+            case .Feeling:
+                CustomPicker(mood: $viewModel.mood)
+
+            case .Comment:
+                Text("Comment")
+
+            }
+            
+            Button(action: {print(viewModel.blood)}, label: {Text("Save".localized) .foregroundColor(.white)
+                    .frame(width: UIScreen.main.bounds.width * 0.3)
+                    .background(Color("BaseColor"))
+                .cornerRadius(10)}).padding()
             Picker("DiabetiIndicators", selection: $viewModel.choosenIndicators) {
                 ForEach(DiabetiIndicators.allCases, id: \.self) { indicator in
                     switch indicator {
@@ -49,31 +83,6 @@ struct FormNavigationBar: View {
                 }
             }.pickerStyle(.segmented)
                 .padding(.horizontal)
-            DatePicker("DateTime", selection: $viewModel.date).labelsHidden().padding(.bottom)
-            switch viewModel.choosenIndicators {
-            case .Blood:
-                CustomCircleSlider(count: $viewModel.blood, measurement: "mmol/l", koef: 36).padding()
-            case .XE:
-                CustomCircleSlider(count: $viewModel.XE, measurement: "bu", koef: 25).padding()
-
-            case .ShortInsulin:
-                Text("ShortInsulin")
-
-            case .LongInsulin:
-                Text("LongInsulin")
-
-            case .Feeling:
-                Text("Feeling")
-
-            case .Comment:
-                Text("Comment")
-
-            }
-            
-            Button(action: {print(viewModel.blood)}, label: {Text("Save".localized) .foregroundColor(.white)
-                    .frame(width: UIScreen.main.bounds.width * 0.3)
-                    .background(Color("BaseColor"))
-                .cornerRadius(10)}).padding()
             Spacer()
         }.padding()
     }
@@ -138,6 +147,28 @@ struct CustomCircleSlider :View {
             self.angle = Double(angle)
             self.count = progress * koef
         }
+    }
+}
+
+struct CustomPicker:View {
+    @Binding var mood: String
+    var body: some View {
+        Picker("Mood", selection: $mood) {
+            ForEach(Mood.allCases, id: \.self) { choose in
+                Group {
+                    Image(choose.rawValue)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 100, height: 100)
+                        .tag(choose.rawValue)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.clear, lineWidth: 2)
+                        )
+                }
+            }
+        }.pickerStyle(.palette)
+            .labelsHidden()
     }
 }
 
