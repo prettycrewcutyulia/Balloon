@@ -12,7 +12,6 @@ enum DiabetiIndicators: String, CaseIterable, Identifiable {
     case XE = "Bread unit"
     case ShortInsulin = "Short insulin"
     case LongInsulin = "Long insulin"
-    case Feeling = "Feeling"
     case Comment = "Comment"
     
     var id: String { self.rawValue }
@@ -52,11 +51,19 @@ struct FormNavigationBar: View {
             case .LongInsulin:
                 CustomCircleSlider(count: $viewModel.longInsulin, measurement: "units", koef: 100).padding()
 
-            case .Feeling:
-                CustomPicker(mood: $viewModel.mood)
-
             case .Comment:
-                Text("Comment")
+                ZStack(alignment: .topLeading) {
+                    if viewModel.comment.isEmpty {
+                            Text("Write your felling or notes...")
+                            .foregroundColor(Color.primary.opacity(0.45))
+                            .padding(EdgeInsets(top: 7, leading: 4, bottom: 0, trailing: 0)).padding()
+                    }
+                    TextEditor(text: $viewModel.comment).frame(height: UIScreen.main.bounds.width - 150, alignment: .leading).background(.gray).opacity(0.15).overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1)).padding()
+                }.onAppear() {
+                    UITextView.appearance().backgroundColor = .clear
+                }.onDisappear() {
+                    UITextView.appearance().backgroundColor = nil
+                }
 
             }
             
@@ -75,8 +82,6 @@ struct FormNavigationBar: View {
                         Image(systemName:"syringe").tag(indicator)
                                            case .LongInsulin:
                         Image(systemName: "syringe.fill").tag(indicator)
-                                           case .Feeling:
-                        Image(systemName: "smiley").tag(indicator)
                                            case .Comment:
                         Image(systemName: "square.and.pencil").tag(indicator)
                                        }
@@ -147,28 +152,6 @@ struct CustomCircleSlider :View {
             self.angle = Double(angle)
             self.count = progress * koef
         }
-    }
-}
-
-struct CustomPicker:View {
-    @Binding var mood: String
-    var body: some View {
-        Picker("Mood", selection: $mood) {
-            ForEach(Mood.allCases, id: \.self) { choose in
-                Group {
-                    Image(choose.rawValue)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
-                        .tag(choose.rawValue)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.clear, lineWidth: 2)
-                        )
-                }
-            }
-        }.pickerStyle(.palette)
-            .labelsHidden()
     }
 }
 

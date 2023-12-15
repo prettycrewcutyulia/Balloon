@@ -64,6 +64,9 @@
 		48C0168A2B1ECB8400A92D2C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 48C016892B1ECB8400A92D2C /* FirebaseStorage */; };
 		48C0168C2B1ECB8400A92D2C /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 48C0168B2B1ECB8400A92D2C /* FirebaseStorageCombine-Community */; };
 		48C0168E2B1FDE9500A92D2C /* ChooseBirthDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0168D2B1FDE9500A92D2C /* ChooseBirthDateView.swift */; };
+		48CED96D2B2BE2F000E1003B /* DiabetNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CED96C2B2BE2EF00E1003B /* DiabetNote.swift */; };
+		48CED96F2B2BF4D900E1003B /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CED96E2B2BF4D900E1003B /* DiaryView.swift */; };
+		48CED9722B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48CED9702B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodeld */; };
 		48CF441C2B07FE2E00EC07CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48CF441E2B07FE2E00EC07CC /* Localizable.strings */; };
 		48CF44212B07FF6500EC07CC /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF44202B07FF6500EC07CC /* Extension+String.swift */; };
 		48CF44232B081AC500EC07CC /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF44222B081AC500EC07CC /* AuthorizationView.swift */; };
@@ -130,6 +133,9 @@
 		48B109FF2B06C71900839F7B /* BalloonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonUITests.swift; sourceTree = "<group>"; };
 		48B10A012B06C71900839F7B /* BalloonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		48C0168D2B1FDE9500A92D2C /* ChooseBirthDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBirthDateView.swift; sourceTree = "<group>"; };
+		48CED96C2B2BE2EF00E1003B /* DiabetNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiabetNote.swift; sourceTree = "<group>"; };
+		48CED96E2B2BF4D900E1003B /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		48CED9712B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiabetNoteCoreData.xcdatamodel; sourceTree = "<group>"; };
 		48CF441D2B07FE2E00EC07CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48CF441F2B07FE2F00EC07CC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48CF44202B07FF6500EC07CC /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
@@ -201,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				487281092B22A10100A386A3 /* UserGeneralInfo.swift */,
+				48CED96C2B2BE2EF00E1003B /* DiabetNote.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +226,7 @@
 			children = (
 				487281132B252FFE00A386A3 /* HomeTabBarView.swift */,
 				484077D32B265B5000F89C8D /* FormNavigationBar.swift */,
+				48CED96E2B2BF4D900E1003B /* DiaryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,7 +265,6 @@
 		48A783C12B1A8D4500649E97 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				487281082B22A0E200A386A3 /* Model */,
 				489800572B19398D00E8C6BE /* ViewModel */,
 				48A783D32B1A97BB00649E97 /* View */,
 				48A783D22B1A979000649E97 /* Components */,
@@ -319,11 +326,13 @@
 		48B109E32B06C71700839F7B /* Balloon */ = {
 			isa = PBXGroup;
 			children = (
+				487281082B22A0E200A386A3 /* Model */,
 				487281112B252FE100A386A3 /* HomeWindow */,
 				48A783C12B1A8D4500649E97 /* Registration */,
 				48A783C02B1A830600649E97 /* Extension */,
 				4898005C2B19413B00E8C6BE /* Service */,
 				48873FA02B090AFA00CAFEE1 /* Info.plist */,
+				48CED9702B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodeld */,
 				48CF44112B07E34300EC07CC /* Fonts */,
 				48B109E42B06C71700839F7B /* BalloonApp.swift */,
 				48B109E82B06C71900839F7B /* Assets.xcassets */,
@@ -537,6 +546,7 @@
 				48A783C32B1A8DD800649E97 /* RadioButton.swift in Sources */,
 				489800592B193A3900E8C6BE /* ChooseLanguageViewModel.swift in Sources */,
 				487281072B22A05F00A386A3 /* DatabaseService.swift in Sources */,
+				48CED9722B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodeld in Sources */,
 				4872810A2B22A10100A386A3 /* UserGeneralInfo.swift in Sources */,
 				48A783C52B1A8DFE00649E97 /* CustomNavigationButton.swift in Sources */,
 				48B109E52B06C71700839F7B /* BalloonApp.swift in Sources */,
@@ -557,8 +567,10 @@
 				48A783CD2B1A94E800649E97 /* VisibilityToggleButton.swift in Sources */,
 				48C0168E2B1FDE9500A92D2C /* ChooseBirthDateView.swift in Sources */,
 				4872810C2B22B6A200A386A3 /* ChooseBirthDateModelView.swift in Sources */,
+				48CED96F2B2BF4D900E1003B /* DiaryView.swift in Sources */,
 				48A783D62B1A9D8E00649E97 /* ForgotPasswordViewModel.swift in Sources */,
 				48A783C72B1A8E3900649E97 /* TopImageWithText.swift in Sources */,
+				48CED96D2B2BE2F000E1003B /* DiabetNote.swift in Sources */,
 				4898005E2B19415300E8C6BE /* AuthenticationServiceEmail.swift in Sources */,
 				48A783C92B1A949B00649E97 /* CustomTextField.swift in Sources */,
 			);
@@ -1015,6 +1027,19 @@
 			productName = "FirebaseStorageCombine-Community";
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		48CED9702B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				48CED9712B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodel */,
+			);
+			currentVersion = 48CED9712B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodel */;
+			path = DiabetNoteCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 48B109D92B06C71700839F7B /* Project object */;
 }

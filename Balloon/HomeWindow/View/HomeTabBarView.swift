@@ -12,7 +12,7 @@ struct HomeTabBarView: View {
     
     var body: some View {
         TabView(selection: $viewModel.selectedView)  {
-            FormNavigationBar()
+            DiaryView()
                 .tabItem {
                     Image(systemName: "list.clipboard")
                     Text("Diary".localized)

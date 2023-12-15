@@ -15,5 +15,5 @@ class FormNavigationBarViewModel :ObservableObject {
     @Published var shortInsulin: Double = 0.0
     @Published var longInsulin: Double = 0.0
     @Published var mood: String = "calm"
-    
+    @Published var comment:String = ""
 }
