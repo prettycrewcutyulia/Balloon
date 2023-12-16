@@ -17,81 +17,97 @@ enum DiabetiIndicators: String, CaseIterable, Identifiable {
     var id: String { self.rawValue }
 }
 
-enum Mood:String, CaseIterable, Identifiable {
-    case happy = "happy"
-    case calm = "calm"
-    case angry = "angry"
-    
-    var id: String { self.rawValue }
-}
-
 struct FormNavigationBar: View {
+    var actionButton: ()->Void
+    var textButton:String
     @ObservedObject var viewModel = FormNavigationBarViewModel()
-    init() {
+    init(textButton:String, actionButton: @escaping ()->Void) {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("BaseColor"))
         let selectedTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UISegmentedControl.appearance().setTitleTextAttributes(selectedTextAttributes, for: .selected)
+        self.actionButton = actionButton
+        self.textButton = textButton
     }
     
     var body: some View {
         VStack(alignment: .center, spacing: 10){
             Text(viewModel.choosenIndicators.rawValue.localized).font(.title2)
             Divider().frame(height: 1).background(Color("BaseColor")).padding(.horizontal)
-
-            DatePicker("DateTime", selection: $viewModel.date).labelsHidden().padding(.bottom)
+            
+            DatePicker("DateTime", selection: $viewModel.diabetNote.Date).labelsHidden().padding(.bottom)
             switch viewModel.choosenIndicators {
             case .Blood:
-                CustomCircleSlider(count: $viewModel.blood, measurement: "mmol/l", koef: 36).padding()
+                CustomCircleSlider(count: $viewModel.diabetNote.Blood, measurement: "mmol/l", koef: 36).padding()
             case .XE:
-                CustomCircleSlider(count: $viewModel.XE, measurement: "bu", koef: 25).padding()
-
+                CustomCircleSlider(count: $viewModel.diabetNote.XE, measurement: "bu", koef: 25).padding()
+                
             case .ShortInsulin:
-                CustomCircleSlider(count: $viewModel.shortInsulin, measurement: "units", koef: 30).padding()
-
+                CustomCircleSlider(count: $viewModel.diabetNote.ShortInsulin, measurement: "units", koef: 30).padding()
+                
             case .LongInsulin:
-                CustomCircleSlider(count: $viewModel.longInsulin, measurement: "units", koef: 100).padding()
-
+                CustomCircleSlider(count: $viewModel.diabetNote.LongInsulin, measurement: "units", koef: 100).padding()
+                
             case .Comment:
-                ZStack(alignment: .topLeading) {
-                    if viewModel.comment.isEmpty {
-                            Text("Write your felling or notes...")
-                            .foregroundColor(Color.primary.opacity(0.45))
-                            .padding(EdgeInsets(top: 7, leading: 4, bottom: 0, trailing: 0)).padding()
-                    }
-                    TextEditor(text: $viewModel.comment).frame(height: UIScreen.main.bounds.width - 150, alignment: .leading).background(.gray).opacity(0.15).overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1)).padding()
-                }.onAppear() {
-                    UITextView.appearance().backgroundColor = .clear
-                }.onDisappear() {
-                    UITextView.appearance().backgroundColor = nil
-                }
-
+                TextEditorComment(comment: $viewModel.diabetNote.Comment)
+                    .font(.body)
+                    .frame(height: UIScreen.main.bounds.width - 150, alignment: .leading)
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("BaseColor"), lineWidth: 1)).padding()
+                
             }
             
-            Button(action: {print(viewModel.blood)}, label: {Text("Save".localized) .foregroundColor(.white)
+            Button(action: {actionButton()}, label: {Text(textButton) .foregroundColor(.white)
                     .frame(width: UIScreen.main.bounds.width * 0.3)
                     .background(Color("BaseColor"))
-                .cornerRadius(10)}).padding()
+                .cornerRadius(10)}).buttonStyle(PlainButtonStyle()).padding()
             Picker("DiabetiIndicators", selection: $viewModel.choosenIndicators) {
                 ForEach(DiabetiIndicators.allCases, id: \.self) { indicator in
                     switch indicator {
-                                           case .Blood:
-                                               Image(systemName: "drop.fill").tag(indicator)
-                                           case .XE:
+                    case .Blood:
+                        Image(systemName: "drop.fill").tag(indicator)
+                    case .XE:
                         Image(systemName:"fork.knife").tag(indicator)
-                                           case .ShortInsulin:
+                    case .ShortInsulin:
                         Image(systemName:"syringe").tag(indicator)
-                                           case .LongInsulin:
+                    case .LongInsulin:
                         Image(systemName: "syringe.fill").tag(indicator)
-                                           case .Comment:
+                    case .Comment:
                         Image(systemName: "square.and.pencil").tag(indicator)
-                                       }
+                    }
                 }
             }.pickerStyle(.segmented)
                 .padding(.horizontal)
-            Spacer()
         }.padding()
     }
 }
+
+struct TextEditorComment:View {
+    enum Field {
+        case textEditor
+    }
+    @Binding var comment:String
+    @FocusState private var focusedField: Field?
+    var placeholder:String = "Enter your notes..."
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            
+            if comment.isEmpty  {
+                VStack {
+                    TextField(placeholder, text: $comment)
+                        .padding(.leading, 6)
+                        .padding(.top, 8)
+                    Spacer()
+                }
+            } else {
+                TextEditor(text: $comment).focused($focusedField, equals: .textEditor)
+                    .onAppear {
+                        focusedField = .textEditor
+                    }
+            }
+        }
+    }
+}
+
 
 struct CustomCircleSlider :View {
     private var widthCircle:CGFloat = 40
@@ -156,5 +172,5 @@ struct CustomCircleSlider :View {
 }
 
 #Preview {
-    FormNavigationBar()
+    FormNavigationBar(textButton: "Save", actionButton: {})
 }

@@ -37,7 +37,7 @@ struct BalloonApp: App {
 //            if UserDefaults.standard.string(forKey:"login") == "yes" {
 //                HelloView()
 //            } else {
-                ChooseLanguageView()
+               HomeTabBarView()
 //            }
         }
     }

@@ -67,6 +67,8 @@
 		48CED96D2B2BE2F000E1003B /* DiabetNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CED96C2B2BE2EF00E1003B /* DiabetNote.swift */; };
 		48CED96F2B2BF4D900E1003B /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CED96E2B2BF4D900E1003B /* DiaryView.swift */; };
 		48CED9722B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48CED9702B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodeld */; };
+		48CED9742B2BFE9300E1003B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CED9732B2BFE9300E1003B /* CoreDataManager.swift */; };
+		48CED9952B2C014D00E1003B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CED9942B2C014D00E1003B /* Persistence.swift */; };
 		48CF441C2B07FE2E00EC07CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48CF441E2B07FE2E00EC07CC /* Localizable.strings */; };
 		48CF44212B07FF6500EC07CC /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF44202B07FF6500EC07CC /* Extension+String.swift */; };
 		48CF44232B081AC500EC07CC /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF44222B081AC500EC07CC /* AuthorizationView.swift */; };
@@ -136,6 +138,8 @@
 		48CED96C2B2BE2EF00E1003B /* DiabetNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiabetNote.swift; sourceTree = "<group>"; };
 		48CED96E2B2BF4D900E1003B /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		48CED9712B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiabetNoteCoreData.xcdatamodel; sourceTree = "<group>"; };
+		48CED9732B2BFE9300E1003B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		48CED9942B2C014D00E1003B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		48CF441D2B07FE2E00EC07CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48CF441F2B07FE2F00EC07CC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48CF44202B07FF6500EC07CC /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 		487281112B252FE100A386A3 /* HomeWindow */ = {
 			isa = PBXGroup;
 			children = (
+				48CED9982B2D288A00E1003B /* Components */,
 				484077D22B26552C00F89C8D /* ViewModel */,
 				487281122B252FEC00A386A3 /* View */,
 			);
@@ -326,6 +331,7 @@
 		48B109E32B06C71700839F7B /* Balloon */ = {
 			isa = PBXGroup;
 			children = (
+				48CED9942B2C014D00E1003B /* Persistence.swift */,
 				487281082B22A0E200A386A3 /* Model */,
 				487281112B252FE100A386A3 /* HomeWindow */,
 				48A783C12B1A8D4500649E97 /* Registration */,
@@ -333,6 +339,7 @@
 				4898005C2B19413B00E8C6BE /* Service */,
 				48873FA02B090AFA00CAFEE1 /* Info.plist */,
 				48CED9702B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodeld */,
+				48CED9732B2BFE9300E1003B /* CoreDataManager.swift */,
 				48CF44112B07E34300EC07CC /* Fonts */,
 				48B109E42B06C71700839F7B /* BalloonApp.swift */,
 				48B109E82B06C71900839F7B /* Assets.xcassets */,
@@ -366,6 +373,13 @@
 				48B10A012B06C71900839F7B /* BalloonUITestsLaunchTests.swift */,
 			);
 			path = BalloonUITests;
+			sourceTree = "<group>";
+		};
+		48CED9982B2D288A00E1003B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		48CF44112B07E34300EC07CC /* Fonts */ = {
@@ -463,7 +477,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					48B109E02B06C71700839F7B = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -539,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				484077D62B27B70E00F89C8D /* FormNavigationBarViewModel.swift in Sources */,
+				48CED9742B2BFE9300E1003B /* CoreDataManager.swift in Sources */,
 				4898005B2B193DAE00E8C6BE /* AuthorizationViewModel.swift in Sources */,
 				489800602B1950E900E8C6BE /* RegistrationViewModel.swift in Sources */,
 				48A783D12B1A952300649E97 /* ImageSugnInButton.swift in Sources */,
@@ -551,6 +566,7 @@
 				48A783C52B1A8DFE00649E97 /* CustomNavigationButton.swift in Sources */,
 				48B109E52B06C71700839F7B /* BalloonApp.swift in Sources */,
 				48CF44232B081AC500EC07CC /* AuthorizationView.swift in Sources */,
+				48CED9952B2C014D00E1003B /* Persistence.swift in Sources */,
 				48A783CF2B1A950500649E97 /* FullScreenCoverButton.swift in Sources */,
 				487281142B252FFE00A386A3 /* HomeTabBarView.swift in Sources */,
 				484077D12B26552700F89C8D /* HomeTabBarViewModel.swift in Sources */,
@@ -626,6 +642,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -689,6 +706,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
