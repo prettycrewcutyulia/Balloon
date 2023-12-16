@@ -60,6 +60,26 @@ class CoreDataManager {
             }
             
         }
+    
+    func deleteNote(note: DiabetNote) {
+            persistentContainer.viewContext.delete(note)
+            do {
+                try persistentContainer.viewContext.save()
+            } catch {
+                persistentContainer.viewContext.rollback()
+                print("Failed to save context \(error)")
+            }
+            
+        }
+    
+    func updateNote() {
+            do {
+                try persistentContainer.viewContext.save()
+            } catch {
+                persistentContainer.viewContext.rollback()
+            }
+            
+        }
 }
 
 extension DiabetNote {
