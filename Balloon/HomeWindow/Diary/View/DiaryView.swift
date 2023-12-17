@@ -24,7 +24,6 @@ struct DiaryView: View {
                                     .onTapGesture {
                                         viewModel.isModalPresented.toggle()
                                         selectedIndex = index
-                                        print("ontap" + String(needsRefresh))
                                     }
                             }.onDelete(perform: { indexSet in
                                 indexSet.forEach { index in
@@ -55,3 +54,4 @@ struct DiaryView: View {
         }
     }
 }
+

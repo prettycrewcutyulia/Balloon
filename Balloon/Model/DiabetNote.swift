@@ -8,7 +8,7 @@
 import Foundation
 
 
-class DiabetNoteModel: ObservableObject {
+class DiabetNoteModel: ObservableObject, Identifiable {
     @Published var Date:Date = .now
     @Published var Blood:Double = 0.0
     @Published var XE:Double = 0.0

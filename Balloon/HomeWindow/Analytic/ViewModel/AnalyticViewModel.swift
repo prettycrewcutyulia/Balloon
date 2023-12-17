@@ -12,11 +12,6 @@ class AnalyticViewModel:ObservableObject {
     @Published var notes: [DiabetNote] = []
     
    func getNote() -> [DiabetNote] {
-//        DispatchQueue.main.async {
-//            print("get")
-//            let fetchedNotes = self.coreDM.getAllNotes()
-//            self.notes = fetchedNotes
-//        }
        let fetchedNotes = self.coreDM.getAllNotes()
        return fetchedNotes
     }
