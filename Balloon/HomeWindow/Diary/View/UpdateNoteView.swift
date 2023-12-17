@@ -10,15 +10,12 @@ import SwiftUI
 struct UpdateNoteView: View {
     @Binding var isModalPresented: Bool
     @ObservedObject var viewModel:UpdateNoteViewModel
-//    var action: () -> Void
-   // @ObservedObject var diaryViewModel: FormNavigationBarViewModel = FormNavigationBarViewModel.shared
     var updatedNote:DiabetNote
     @Binding var needsRefresh: Bool
     
     init(isModalPresented: Binding<Bool>,action: @escaping () -> Void, updatedNote: DiabetNote, needRefresh:Binding<Bool>) {
         _isModalPresented = isModalPresented
         viewModel = UpdateNoteViewModel(updatedNote: updatedNote)
-//        self.action = action
         self.updatedNote = updatedNote
         _needsRefresh = needRefresh
     }
@@ -28,8 +25,8 @@ struct UpdateNoteView: View {
             FormNavigationBar(textButton: "Update".localized, actionButton:{
                 viewModel.updateNote()
                 self.isModalPresented.toggle()
-                needsRefresh.toggle()
-//                action()
+                self.needsRefresh.toggle()
+                print("toggle")
             })
             .onAppear(perform: {
                 viewModel.viewModelDiaryView.diabetNote = DiabetNoteModel(Date: updatedNote.date!, Blood: updatedNote.blood, XE: updatedNote.xe, ShortInsulin: updatedNote.shortInsulin, LongInsulin: updatedNote.longInsulin, Comment: updatedNote.comment!)

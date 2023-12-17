@@ -44,7 +44,6 @@
 		48B109F62B06C71900839F7B /* BalloonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B109F52B06C71900839F7B /* BalloonTests.swift */; };
 		48B10A002B06C71900839F7B /* BalloonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B109FF2B06C71900839F7B /* BalloonUITests.swift */; };
 		48B10A022B06C71900839F7B /* BalloonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B10A012B06C71900839F7B /* BalloonUITestsLaunchTests.swift */; };
-		48BFDE832B2DF46D004A3099 /* CustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BFDE822B2DF46D004A3099 /* CustomRow.swift */; };
 		48BFDE852B2DF4A3004A3099 /* DiabetiIndicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BFDE842B2DF4A3004A3099 /* DiabetiIndicators.swift */; };
 		48BFDE872B2DF4CE004A3099 /* TextEditorComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BFDE862B2DF4CE004A3099 /* TextEditorComment.swift */; };
 		48BFDE8C2B2DF518004A3099 /* CustomCircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BFDE8B2B2DF518004A3099 /* CustomCircleSlider.swift */; };
@@ -76,7 +75,6 @@
 		48CED96F2B2BF4D900E1003B /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CED96E2B2BF4D900E1003B /* DiaryView.swift */; };
 		48CED9722B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48CED9702B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodeld */; };
 		48CED9742B2BFE9300E1003B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CED9732B2BFE9300E1003B /* CoreDataManager.swift */; };
-		48CED9952B2C014D00E1003B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CED9942B2C014D00E1003B /* Persistence.swift */; };
 		48CF441C2B07FE2E00EC07CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48CF441E2B07FE2E00EC07CC /* Localizable.strings */; };
 		48CF44212B07FF6500EC07CC /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF44202B07FF6500EC07CC /* Extension+String.swift */; };
 		48CF44232B081AC500EC07CC /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF44222B081AC500EC07CC /* AuthorizationView.swift */; };
@@ -142,7 +140,6 @@
 		48B109FB2B06C71900839F7B /* BalloonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BalloonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B109FF2B06C71900839F7B /* BalloonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonUITests.swift; sourceTree = "<group>"; };
 		48B10A012B06C71900839F7B /* BalloonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		48BFDE822B2DF46D004A3099 /* CustomRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRow.swift; sourceTree = "<group>"; };
 		48BFDE842B2DF4A3004A3099 /* DiabetiIndicators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiabetiIndicators.swift; sourceTree = "<group>"; };
 		48BFDE862B2DF4CE004A3099 /* TextEditorComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorComment.swift; sourceTree = "<group>"; };
 		48BFDE8B2B2DF518004A3099 /* CustomCircleSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircleSlider.swift; sourceTree = "<group>"; };
@@ -155,7 +152,6 @@
 		48CED96E2B2BF4D900E1003B /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		48CED9712B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiabetNoteCoreData.xcdatamodel; sourceTree = "<group>"; };
 		48CED9732B2BFE9300E1003B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		48CED9942B2C014D00E1003B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		48CF441D2B07FE2E00EC07CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48CF441F2B07FE2F00EC07CC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48CF44202B07FF6500EC07CC /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
@@ -270,6 +266,7 @@
 		4898005C2B19413B00E8C6BE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				48CED9732B2BFE9300E1003B /* CoreDataManager.swift */,
 				4898005D2B19415300E8C6BE /* AuthenticationServiceEmail.swift */,
 				487281062B22A05F00A386A3 /* DatabaseService.swift */,
 			);
@@ -348,7 +345,6 @@
 		48B109E32B06C71700839F7B /* Balloon */ = {
 			isa = PBXGroup;
 			children = (
-				48CED9942B2C014D00E1003B /* Persistence.swift */,
 				487281082B22A0E200A386A3 /* Model */,
 				487281112B252FE100A386A3 /* HomeWindow */,
 				48A783C12B1A8D4500649E97 /* Registration */,
@@ -356,7 +352,6 @@
 				4898005C2B19413B00E8C6BE /* Service */,
 				48873FA02B090AFA00CAFEE1 /* Info.plist */,
 				48CED9702B2BFC0C00E1003B /* DiabetNoteCoreData.xcdatamodeld */,
-				48CED9732B2BFE9300E1003B /* CoreDataManager.swift */,
 				48CF44112B07E34300EC07CC /* Fonts */,
 				48B109E42B06C71700839F7B /* BalloonApp.swift */,
 				48B109E82B06C71900839F7B /* Assets.xcassets */,
@@ -430,7 +425,6 @@
 		48CED9982B2D288A00E1003B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				48BFDE822B2DF46D004A3099 /* CustomRow.swift */,
 				48BFDE842B2DF4A3004A3099 /* DiabetiIndicators.swift */,
 				48BFDE862B2DF4CE004A3099 /* TextEditorComment.swift */,
 				48BFDE8B2B2DF518004A3099 /* CustomCircleSlider.swift */,
@@ -615,7 +609,6 @@
 				489800602B1950E900E8C6BE /* RegistrationViewModel.swift in Sources */,
 				48A783D12B1A952300649E97 /* ImageSugnInButton.swift in Sources */,
 				48BFDE9B2B2E7BE6004A3099 /* AnalyticViewModel.swift in Sources */,
-				48BFDE832B2DF46D004A3099 /* CustomRow.swift in Sources */,
 				48B109E72B06C71700839F7B /* ChooseLanguageView.swift in Sources */,
 				48BFDE902B2DF7A6004A3099 /* UpdateNoteView.swift in Sources */,
 				48A783C32B1A8DD800649E97 /* RadioButton.swift in Sources */,
@@ -627,7 +620,6 @@
 				48A783C52B1A8DFE00649E97 /* CustomNavigationButton.swift in Sources */,
 				48B109E52B06C71700839F7B /* BalloonApp.swift in Sources */,
 				48CF44232B081AC500EC07CC /* AuthorizationView.swift in Sources */,
-				48CED9952B2C014D00E1003B /* Persistence.swift in Sources */,
 				48BFDE872B2DF4CE004A3099 /* TextEditorComment.swift in Sources */,
 				48A783CF2B1A950500649E97 /* FullScreenCoverButton.swift in Sources */,
 				487281142B252FFE00A386A3 /* HomeTabBarView.swift in Sources */,

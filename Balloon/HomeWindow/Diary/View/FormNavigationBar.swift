@@ -14,7 +14,6 @@ struct FormNavigationBar: View {
     var textButton:String
     
     @StateObject var viewModel = FormNavigationBarViewModel.shared
-    @State var needRefresh:Bool = false
     
     init(textButton:String, actionButton: @escaping ()->Void) {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("BaseColor"))
@@ -54,7 +53,6 @@ struct FormNavigationBar: View {
             
             Button(action: {
                 actionButton()
-                needRefresh.toggle()
                 viewModel.choosenIndicators = .Blood
                 viewModel.isModalPresented = false 
             }, label: {Text(textButton) .foregroundColor(.white)
