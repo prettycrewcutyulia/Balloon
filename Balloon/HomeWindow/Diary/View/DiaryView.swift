@@ -52,7 +52,6 @@ struct DiaryView: View {
                 }.listStyle(.plain)
                     .refreshable {
                         viewModel.getNote()
-                        print(viewModel.notes.first!.blood)
                     }
                 
             }.onAppear(perform: {

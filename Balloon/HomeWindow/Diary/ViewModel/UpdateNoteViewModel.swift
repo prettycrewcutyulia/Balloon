@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 class UpdateNoteViewModel:ObservableObject {
-//    @Binding var isModalPresented: Bool
     let coreDM: CoreDataManager = CoreDataManager.shared
     @ObservedObject var viewModelDiaryView:FormNavigationBarViewModel = FormNavigationBarViewModel.shared
     let updatedNote: DiabetNote
@@ -23,6 +22,10 @@ class UpdateNoteViewModel:ObservableObject {
     func updateNote() {
         updatedNote.blood = viewModelDiaryView.diabetNote.Blood
         updatedNote.xe = viewModelDiaryView.diabetNote.XE
+        updatedNote.date = viewModelDiaryView.diabetNote.Date
+        updatedNote.shortInsulin = viewModelDiaryView.diabetNote.ShortInsulin
+        updatedNote.longInsulin = viewModelDiaryView.diabetNote.LongInsulin
+        updatedNote.comment = viewModelDiaryView.diabetNote.Comment
         viewModelDiaryView.coreDM.updateNote()
         DispatchQueue.main.async {
             //очищение

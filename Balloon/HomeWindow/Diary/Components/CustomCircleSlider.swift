@@ -16,12 +16,14 @@ struct CustomCircleSlider :View {
     @State var measurement:String
     @State var koef:Double
     @State var format:String = "%.1f"
+    @Binding var needRefresh:Bool
     
-    init(count: Binding<Double>, measurement: String, koef: Double, format:String = "%.1f") {
+    init(count: Binding<Double>, measurement: String, koef: Double, format:String = "%.1f", needRefresh:Binding<Bool>) {
         self.measurement = measurement
         self.koef = koef
         self.format = format
         self._count = count
+        self._needRefresh = needRefresh
     }
     
     var body: some View {
@@ -46,7 +48,8 @@ struct CustomCircleSlider :View {
             Text(String(format: format, progress * koef) + " " + measurement)
                 .font(.title)
                 .fontWeight(.medium)
-        }.onAppear {
+        }.accentColor(needRefresh ? .white : .black)
+        .onAppear {
             progress = count / koef
             angle = progress * 360
         }

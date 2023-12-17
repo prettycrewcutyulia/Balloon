@@ -39,7 +39,6 @@ class ChooseGeneralInfoViewModel: ObservableObject {
                 UserDefaults.standard.set("yes", forKey: "login")
                 self?.isContinue = true
             }
-            print(self?.isContinue ?? "boom")
         }
     }
 }

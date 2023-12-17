@@ -14,13 +14,13 @@ class FormNavigationBarViewModel : ObservableObject {
     @Published var diabetNote:DiabetNoteModel = DiabetNoteModel(Date: .now, Blood: 0, XE: 0, ShortInsulin: 0, LongInsulin: 0, Comment: "")
     @Published var notes: [DiabetNote] = []
     @Published var isModalPresented = false
+    @Published var needRefresh = false
     
     static let shared = FormNavigationBarViewModel()
     let coreDM: CoreDataManager = CoreDataManager.shared
     
     func getNote() {
         DispatchQueue.main.async {
-            print("get")
             let fetchedNotes = self.coreDM.getAllNotes()
             self.notes = fetchedNotes
         }
@@ -41,6 +41,7 @@ class FormNavigationBarViewModel : ObservableObject {
             self.diabetNote.LongInsulin = 0
             self.diabetNote.Comment = ""
             self.diabetNote.objectWillChange.send()
+            self.needRefresh.toggle()
         }
         getNote()
         

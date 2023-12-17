@@ -14,6 +14,7 @@ struct FormNavigationBar: View {
     var textButton:String
     
     @StateObject var viewModel = FormNavigationBarViewModel.shared
+    @State var needRefresh = false
     
     init(textButton:String, actionButton: @escaping ()->Void) {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color("BaseColor"))
@@ -32,15 +33,15 @@ struct FormNavigationBar: View {
 
             switch viewModel.choosenIndicators {
             case .Blood:
-                CustomCircleSlider(count: $viewModel.diabetNote.Blood, measurement: "mmol/l", koef: 36).padding()
+                CustomCircleSlider(count: $viewModel.diabetNote.Blood, measurement: "mmol/l", koef: 36, needRefresh: $needRefresh).padding().accentColor(needRefresh ? .white : .black)
             case .XE:
-                CustomCircleSlider(count: $viewModel.diabetNote.XE, measurement: "bu", koef: 25).padding()
+                CustomCircleSlider(count: $viewModel.diabetNote.XE, measurement: "bu", koef: 25, needRefresh: $needRefresh).padding()
                 
             case .ShortInsulin:
-                CustomCircleSlider(count: $viewModel.diabetNote.ShortInsulin, measurement: "units", koef: 30).padding()
+                CustomCircleSlider(count: $viewModel.diabetNote.ShortInsulin, measurement: "units", koef: 30, needRefresh: $needRefresh).padding()
                 
             case .LongInsulin:
-                CustomCircleSlider(count: $viewModel.diabetNote.LongInsulin, measurement: "units", koef: 100).padding()
+                CustomCircleSlider(count: $viewModel.diabetNote.LongInsulin, measurement: "units", koef: 100, needRefresh: $needRefresh).padding()
                 
             case .Comment:
                 TextEditorComment(comment: $viewModel.diabetNote.Comment)
@@ -55,6 +56,7 @@ struct FormNavigationBar: View {
                 actionButton()
                 viewModel.choosenIndicators = .Blood
                 viewModel.isModalPresented = false 
+                needRefresh.toggle()
             }, label: {Text(textButton) .foregroundColor(.white)
                     .frame(width: UIScreen.main.bounds.width * 0.3)
                     .background(Color("BaseColor"))
@@ -76,7 +78,8 @@ struct FormNavigationBar: View {
                 }
             }.pickerStyle(.segmented)
                 .padding(.horizontal)
-        }.padding()
+        }
+        .padding()
     }
 }
 

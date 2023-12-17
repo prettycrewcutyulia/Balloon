@@ -13,7 +13,6 @@ class ChooseBirthDateModelView:ObservableObject {
     let endDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
     
     func confirmChoose() {
-        print(currentDate)
         UserDefaults.standard.set(currentDate, forKey: "BirthDate")
     }
 }

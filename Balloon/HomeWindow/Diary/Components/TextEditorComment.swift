@@ -22,7 +22,6 @@ struct TextEditorComment:View {
                 .focused($focusedField, equals: .textEditor)
             if (focusedField == .textEditor) {
                 Button("Submit") {
-                    print("Tip:")
                     endTextEditing()
                 }.padding(.bottom, 8)
             }

@@ -26,7 +26,6 @@ struct UpdateNoteView: View {
                 viewModel.updateNote()
                 self.isModalPresented.toggle()
                 self.needsRefresh.toggle()
-                print("toggle")
             })
             .onAppear(perform: {
                 viewModel.viewModelDiaryView.diabetNote = DiabetNoteModel(Date: updatedNote.date!, Blood: updatedNote.blood, XE: updatedNote.xe, ShortInsulin: updatedNote.shortInsulin, LongInsulin: updatedNote.longInsulin, Comment: updatedNote.comment!)

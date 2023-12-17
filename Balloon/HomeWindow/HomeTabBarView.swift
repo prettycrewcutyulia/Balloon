@@ -22,16 +22,11 @@ struct HomeTabBarView: View {
                     Image(systemName: "chart.xyaxis.line")
                     Text("Statistics".localized)
                 }.tag(2)
-            Text("Third")
-                .tabItem {
-                    Image(systemName: "calendar.badge.plus")
-                    Text("Reminders".localized)
-                }.tag(3)
             Text("Fourth")
                 .tabItem {
                     Image(systemName: "gearshape")
                     Text("Settings".localized)
-                }.tag(4)
+                }.tag(3)
         }
     }
 }
