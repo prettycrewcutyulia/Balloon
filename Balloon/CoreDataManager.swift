@@ -7,10 +7,8 @@
 
 import CoreData
 
-class CoreDataManager {
+class CoreDataManager : ObservableObject{
     static let shared = CoreDataManager()
-    
-    // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "DiabetNoteCoreData")

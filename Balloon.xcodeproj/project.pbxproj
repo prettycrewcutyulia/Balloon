@@ -50,6 +50,8 @@
 		48BFDE8C2B2DF518004A3099 /* CustomCircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BFDE8B2B2DF518004A3099 /* CustomCircleSlider.swift */; };
 		48BFDE8E2B2DF6EA004A3099 /* UpdateNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BFDE8D2B2DF6EA004A3099 /* UpdateNoteViewModel.swift */; };
 		48BFDE902B2DF7A6004A3099 /* UpdateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BFDE8F2B2DF7A6004A3099 /* UpdateNoteView.swift */; };
+		48BFDE992B2E7A40004A3099 /* Analytic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BFDE982B2E7A40004A3099 /* Analytic.swift */; };
+		48BFDE9B2B2E7BE6004A3099 /* AnalyticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BFDE9A2B2E7BE6004A3099 /* AnalyticViewModel.swift */; };
 		48C016682B1ECB8400A92D2C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 48C016672B1ECB8400A92D2C /* FirebaseAnalytics */; };
 		48C0166A2B1ECB8400A92D2C /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 48C016692B1ECB8400A92D2C /* FirebaseAnalyticsOnDeviceConversion */; };
 		48C0166C2B1ECB8400A92D2C /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48C0166B2B1ECB8400A92D2C /* FirebaseAnalyticsSwift */; };
@@ -146,6 +148,8 @@
 		48BFDE8B2B2DF518004A3099 /* CustomCircleSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircleSlider.swift; sourceTree = "<group>"; };
 		48BFDE8D2B2DF6EA004A3099 /* UpdateNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteViewModel.swift; sourceTree = "<group>"; };
 		48BFDE8F2B2DF7A6004A3099 /* UpdateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteView.swift; sourceTree = "<group>"; };
+		48BFDE982B2E7A40004A3099 /* Analytic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytic.swift; sourceTree = "<group>"; };
+		48BFDE9A2B2E7BE6004A3099 /* AnalyticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticViewModel.swift; sourceTree = "<group>"; };
 		48C0168D2B1FDE9500A92D2C /* ChooseBirthDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBirthDateView.swift; sourceTree = "<group>"; };
 		48CED96C2B2BE2EF00E1003B /* DiabetNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiabetNote.swift; sourceTree = "<group>"; };
 		48CED96E2B2BF4D900E1003B /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 		487281112B252FE100A386A3 /* HomeWindow */ = {
 			isa = PBXGroup;
 			children = (
+				48BFDE912B2E6B83004A3099 /* Analytic */,
 				487281132B252FFE00A386A3 /* HomeTabBarView.swift */,
 				484077D02B26552700F89C8D /* HomeTabBarViewModel.swift */,
 				48BFDE812B2DF3F5004A3099 /* Diary */,
@@ -395,6 +400,31 @@
 				484077D22B26552C00F89C8D /* ViewModel */,
 			);
 			path = Diary;
+			sourceTree = "<group>";
+		};
+		48BFDE912B2E6B83004A3099 /* Analytic */ = {
+			isa = PBXGroup;
+			children = (
+				48BFDE932B2E6BB3004A3099 /* ViewModel */,
+				48BFDE922B2E6BAF004A3099 /* View */,
+			);
+			path = Analytic;
+			sourceTree = "<group>";
+		};
+		48BFDE922B2E6BAF004A3099 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48BFDE982B2E7A40004A3099 /* Analytic.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		48BFDE932B2E6BB3004A3099 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				48BFDE9A2B2E7BE6004A3099 /* AnalyticViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		48CED9982B2D288A00E1003B /* Components */ = {
@@ -584,6 +614,7 @@
 				4898005B2B193DAE00E8C6BE /* AuthorizationViewModel.swift in Sources */,
 				489800602B1950E900E8C6BE /* RegistrationViewModel.swift in Sources */,
 				48A783D12B1A952300649E97 /* ImageSugnInButton.swift in Sources */,
+				48BFDE9B2B2E7BE6004A3099 /* AnalyticViewModel.swift in Sources */,
 				48BFDE832B2DF46D004A3099 /* CustomRow.swift in Sources */,
 				48B109E72B06C71700839F7B /* ChooseLanguageView.swift in Sources */,
 				48BFDE902B2DF7A6004A3099 /* UpdateNoteView.swift in Sources */,
@@ -608,6 +639,7 @@
 				48A783DA2B1B742500649E97 /* ChooseTypeDiabetViewModel.swift in Sources */,
 				48CF44212B07FF6500EC07CC /* Extension+String.swift in Sources */,
 				485AB1042B0978D30005EE27 /* ForgotPasswordView.swift in Sources */,
+				48BFDE992B2E7A40004A3099 /* Analytic.swift in Sources */,
 				48E139C92B09A02200CD749A /* HelloView.swift in Sources */,
 				485AB0FB2B096B720005EE27 /* RegistrationView.swift in Sources */,
 				4872810E2B23D15800A386A3 /* ChooseGeneralInfoView.swift in Sources */,

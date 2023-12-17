@@ -17,7 +17,7 @@ struct HomeTabBarView: View {
                     Image(systemName: "list.clipboard")
                     Text("Diary".localized)
                 }.tag(1)
-            Text("Second")
+            Analytic()
                 .tabItem {
                     Image(systemName: "chart.xyaxis.line")
                     Text("Statistics".localized)
