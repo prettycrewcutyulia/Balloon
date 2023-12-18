@@ -10,6 +10,8 @@
 		484077D12B26552700F89C8D /* HomeTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484077D02B26552700F89C8D /* HomeTabBarViewModel.swift */; };
 		484077D42B265B5100F89C8D /* FormNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484077D32B265B5000F89C8D /* FormNavigationBar.swift */; };
 		484077D62B27B70E00F89C8D /* FormNavigationBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484077D52B27B70D00F89C8D /* FormNavigationBarViewModel.swift */; };
+		48513F792B2FB65F002408A5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48513F782B2FB65F002408A5 /* SettingsView.swift */; };
+		48513F7B2B2FB8B3002408A5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48513F7A2B2FB8B3002408A5 /* SettingsViewModel.swift */; };
 		485AB0FB2B096B720005EE27 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AB0FA2B096B720005EE27 /* RegistrationView.swift */; };
 		485AB1022B0975B90005EE27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 485AB1012B0975B90005EE27 /* GoogleService-Info.plist */; };
 		485AB1042B0978D30005EE27 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485AB1032B0978D30005EE27 /* ForgotPasswordView.swift */; };
@@ -102,6 +104,8 @@
 		484077D02B26552700F89C8D /* HomeTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewModel.swift; sourceTree = "<group>"; };
 		484077D32B265B5000F89C8D /* FormNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormNavigationBar.swift; sourceTree = "<group>"; };
 		484077D52B27B70D00F89C8D /* FormNavigationBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormNavigationBarViewModel.swift; sourceTree = "<group>"; };
+		48513F782B2FB65F002408A5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		48513F7A2B2FB8B3002408A5 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		485AB0FA2B096B720005EE27 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		485AB1012B0975B90005EE27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		485AB1032B0978D30005EE27 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -212,6 +216,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		48513F772B2FB5D9002408A5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				48513F782B2FB65F002408A5 /* SettingsView.swift */,
+				48513F7A2B2FB8B3002408A5 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		485AB0F72B0967EC0005EE27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,7 +244,8 @@
 		487281112B252FE100A386A3 /* HomeWindow */ = {
 			isa = PBXGroup;
 			children = (
-				48BFDE912B2E6B83004A3099 /* Analytic */,
+				48513F772B2FB5D9002408A5 /* Settings */,
+				48BFDE912B2E6B83004A3099 /* Statistics */,
 				487281132B252FFE00A386A3 /* HomeTabBarView.swift */,
 				484077D02B26552700F89C8D /* HomeTabBarViewModel.swift */,
 				48BFDE812B2DF3F5004A3099 /* Diary */,
@@ -397,13 +411,13 @@
 			path = Diary;
 			sourceTree = "<group>";
 		};
-		48BFDE912B2E6B83004A3099 /* Analytic */ = {
+		48BFDE912B2E6B83004A3099 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
 				48BFDE932B2E6BB3004A3099 /* ViewModel */,
 				48BFDE922B2E6BAF004A3099 /* View */,
 			);
-			path = Analytic;
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 		48BFDE922B2E6BAF004A3099 /* View */ = {
@@ -623,6 +637,7 @@
 				48BFDE872B2DF4CE004A3099 /* TextEditorComment.swift in Sources */,
 				48A783CF2B1A950500649E97 /* FullScreenCoverButton.swift in Sources */,
 				487281142B252FFE00A386A3 /* HomeTabBarView.swift in Sources */,
+				48513F792B2FB65F002408A5 /* SettingsView.swift in Sources */,
 				484077D12B26552700F89C8D /* HomeTabBarViewModel.swift in Sources */,
 				484077D42B265B5100F89C8D /* FormNavigationBar.swift in Sources */,
 				487281102B25211E00A386A3 /* ChooseGeneralInfoViewModel.swift in Sources */,
@@ -636,6 +651,7 @@
 				485AB0FB2B096B720005EE27 /* RegistrationView.swift in Sources */,
 				4872810E2B23D15800A386A3 /* ChooseGeneralInfoView.swift in Sources */,
 				48A783CD2B1A94E800649E97 /* VisibilityToggleButton.swift in Sources */,
+				48513F7B2B2FB8B3002408A5 /* SettingsViewModel.swift in Sources */,
 				48C0168E2B1FDE9500A92D2C /* ChooseBirthDateView.swift in Sources */,
 				4872810C2B22B6A200A386A3 /* ChooseBirthDateModelView.swift in Sources */,
 				48CED96F2B2BF4D900E1003B /* DiaryView.swift in Sources */,

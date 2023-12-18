@@ -5,7 +5,8 @@
 //  Created by Юлия Гудошникова on 01.12.2023.
 //
 
-import FirebaseAuth
+import Foundation
+import Firebase
 
 class AuthenticationServiceEmail {
     static let shared = AuthenticationServiceEmail()

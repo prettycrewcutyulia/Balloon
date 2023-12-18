@@ -15,8 +15,6 @@ import FirebaseFirestore
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-//    let providerFactory = AppCheckDebugProviderFactory()
-//    AppCheck.setAppCheckProviderFactory(providerFactory)
     FirebaseApp.configure()
     let settings = FirestoreSettings()
     settings.host = "localhost:8080"
@@ -34,11 +32,11 @@ struct BalloonApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            if UserDefaults.standard.string(forKey:"login") == "yes" {
-//                HelloView()
-//            } else {
-               HomeTabBarView()
-//            }
+            if UserDefaults.standard.string(forKey:"login") == "yes" {
+                HomeTabBarView()
+            } else {
+               AuthorizationView()
+            }
         }
     }
 }
